@@ -1,0 +1,29 @@
+# ── Build outputs ─────────────────────────────────────────────────────────────
+build/
+
+# ── Downloaded / fetched dependencies ─────────────────────────────────────────
+# wasi-sdk: ~432 MB toolchain binary — never commit, always downloaded by script
+.deps/wasi-sdk/
+
+# proxy-wasm-cpp-sdk and proxy-wasm-cpp-host are external repos cloned by the
+# build script. Use git submodules if you want them tracked, not raw clones.
+.deps/proxy-wasm-cpp-sdk/
+.deps/proxy-wasm-cpp-host/
+
+# ── macOS junk ────────────────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+
+# ── Editor / IDE ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── CMake generated ───────────────────────────────────────────────────────────
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.ninja
+.ninja_deps
+.ninja_log
