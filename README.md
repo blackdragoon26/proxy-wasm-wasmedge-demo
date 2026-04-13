@@ -59,7 +59,7 @@ If you prefer to configure the build environment independently, please adhere to
 Target the specified minimum supported version:
 
 ```bash
-curl -sSfL https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | bash -s -- --version=0.13.5
+curl -sSfL https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | bash -s -- --version 0.14.1
 source ~/.wasmedge/env
 ```
 

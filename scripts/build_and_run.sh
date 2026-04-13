@@ -5,7 +5,7 @@ set -euo pipefail
 DEMO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DEPS_DIR="${DEMO_ROOT}/.deps"
 BUILD_DIR="${DEMO_ROOT}/build"
-WASMEDGE_VERSION="0.13.5"
+WASMEDGE_VERSION="0.14.1"
 # Ensure build tools are in the path (e.g. for Homebrew on macOS)
 export PATH="/opt/homebrew/bin:/usr/local/bin:${PATH}"
 
@@ -26,7 +26,7 @@ echo "Platform: ${ARCH}-${HOST_OS}"
 section "1/5  Installing WasmEdge ${WASMEDGE_VERSION}"
 if [[ ! -d "${HOME}/.wasmedge/lib" ]]; then
   curl -sSfL https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh \
-    | bash -s -- --version="${WASMEDGE_VERSION}"
+    | bash -s -- --version "${WASMEDGE_VERSION}"
 else
   echo "Already installed — skipping."
 fi
