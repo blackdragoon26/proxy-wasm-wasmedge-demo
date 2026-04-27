@@ -38,7 +38,7 @@ For systems running Linux or macOS, a comprehensive build pipeline is provided. 
 Once the dependencies are installed, clone the repository and execute the pipeline:
 
 ```bash
-git clone [https://github.com/blackdragoon26/wasmedge_proxy_wasm_demo.git](https://github.com/blackdragoon26/wasmedge_proxy_wasm_demo.git)
+git clone https://github.com/blackdragoon26/wasmedge_proxy_wasm_demo.git
 cd wasmedge_proxy_wasm_demo
 chmod +x scripts/build_and_run.sh
 ./scripts/build_and_run.sh
