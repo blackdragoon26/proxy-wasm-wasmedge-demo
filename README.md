@@ -17,7 +17,7 @@ The demonstration is composed of two primary layers:
 - **Host (`host/main.cc`):** Compiles natively and relies on WasmEdge to load the `.wasm` binary. It pushes a mock HTTP request through the plugin and prints the headers before and after modification to verify functionality.
 
 ## Prerequisites
-For both Quick Start and Manual Build Before running the script, ensure your system has the required build tools such as CMake, Ninja, and Clang/GCC installed and the Abseil C++ library.
+For both Quick Start and [Manual Build](#manual-build) Before running the script, ensure your system has the required build tools such as CMake, Ninja, and Clang/GCC installed and the Abseil C++ library.
 
 **macOS (Homebrew):**
 ```bash
