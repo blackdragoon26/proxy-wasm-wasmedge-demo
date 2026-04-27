@@ -44,29 +44,6 @@ chmod +x scripts/build_and_run.sh
 ./scripts/build_and_run.sh
 ```
 
-### Expected Execution Trace
-
-Upon successful execution, the host will load the WebAssembly filter and simulate network traffic. The output will explicitly indicate that the plugin injected the correct header:
-
-```text
-Loaded plugin: .../add_header_filter.wasm
-Runtime:       WasmEdge (wasmedge)
-
-── Request headers (before filter) ──
-  :method: GET
-  :path: /api/hello
-
-── Response headers (before filter) ──
-  :status: 200
-
-── Running onResponseHeaders ──
-[INFO] [AddHeaderFilter] Injected 'x-powered-by: WasmEdge' into response.
-
-── Response headers (after filter) ──
-  :status: 200
-  x-powered-by: WasmEdge
-```
-
 ## Manual Build
 
 If you prefer to configure the build environment independently, please adhere to the following sequence:
@@ -119,6 +96,28 @@ Supply the generated WebAssembly binary directly to the host runner:
 
 ```bash
 LD_LIBRARY_PATH=$HOME/.wasmedge/lib ./build/host/demo ./build/plugin/add_header_filter.wasm
+```
+## Expected Execution Trace
+
+Upon successful execution, the host will load the WebAssembly filter and simulate network traffic. The output will explicitly indicate that the plugin injected the correct header:
+
+```text
+Loaded plugin: .../add_header_filter.wasm
+Runtime:       WasmEdge (wasmedge)
+
+── Request headers (before filter) ──
+  :method: GET
+  :path: /api/hello
+
+── Response headers (before filter) ──
+  :status: 200
+
+── Running onResponseHeaders ──
+[INFO] [AddHeaderFilter] Injected 'x-powered-by: WasmEdge' into response.
+
+── Response headers (after filter) ──
+  :status: 200
+  x-powered-by: WasmEdge
 ```
 
 ## References
