@@ -16,13 +16,30 @@ The demonstration is composed of two primary layers:
 - **Plugin (`plugin/plugin.cc`):** Implements a WebAssembly filter that hooks into the HTTP response phase and injects a custom `x-powered-by: WasmEdge` header.
 - **Host (`host/main.cc`):** Compiles natively and relies on WasmEdge to load the `.wasm` binary. It pushes a mock HTTP request through the plugin and prints the headers before and after modification to verify functionality.
 
+## Prerequisites
+For both Quick Start and Manual Build Before running the script, ensure your system has the required build tools such as CMake, Ninja, and Clang/GCC installed and the Abseil C++ library.
+
+**macOS (Homebrew):**
+```bash
+brew install cmake ninja abseil
+```
+
+**Linux (Ubuntu/Debian):**
+```bash
+sudo apt update
+sudo apt install cmake ninja-build libabsl-dev
+```
+
 ## Quick Start
 
 For systems running Linux or macOS, a comprehensive build pipeline is provided. The script automatically handles downloading required SDKs, cross-compiling the WebAssembly module, compiling the host natively, and executing the integrated binary.
 
-Ensure you have CMake, Ninja, and Clang/GCC installed.
+### Build and Run
+Once the dependencies are installed, clone the repository and execute the pipeline:
 
 ```bash
+git clone [https://github.com/blackdragoon26/wasmedge_proxy_wasm_demo.git](https://github.com/blackdragoon26/wasmedge_proxy_wasm_demo.git)
+cd wasmedge_proxy_wasm_demo
 chmod +x scripts/build_and_run.sh
 ./scripts/build_and_run.sh
 ```
@@ -50,7 +67,7 @@ Runtime:       WasmEdge (wasmedge)
   x-powered-by: WasmEdge
 ```
 
-## Manual Build Instructions
+## Manual Build
 
 If you prefer to configure the build environment independently, please adhere to the following sequence:
 
